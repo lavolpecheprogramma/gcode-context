@@ -1,0 +1,25 @@
+{
+  "name": "gcode-context",
+  "version": "0.0.1",
+  "description": "Wrap the canvas context to replicate it in a gcode file",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lavolpecheprogramma/gcode-context.git"
+  },
+  "keywords": [
+    "gcode",
+    "penplotter"
+  ],
+  "author": "Alberto Parziale",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/lavolpecheprogramma/gcode-context/issues"
+  },
+  "homepage": "https://github.com/lavolpecheprogramma/gcode-context#readme",
+  "dependencies": {
+    "canvas-sketch-util": "^1.10.0",
+    "gcode-file": "^1.0.3",
+    "simplify-js": "^1.2.4"
+  }
+}
