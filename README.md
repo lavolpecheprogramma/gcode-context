@@ -13,7 +13,7 @@ npm i --save @gcode-context
 You can use gcode-context with [canvas-sketch](https://github.com/mattdesl/canvas-sketch) by Matt DesLauriers (@mattdesl)
 
 ```javascript
-const { createPath, pathsToPolylines } = require('canvas-sketch-util/penplot');
+const canvasSketch = require('canvas-sketch');
 const GCodeContext = require('gcode-context');
 
 const gcodeSettings = {
@@ -51,7 +51,6 @@ canvasSketch(sketch, settings);
 or in plain javascript: 
 
 ```javascript
-const { createPath, pathsToPolylines } = require('canvas-sketch-util/penplot');
 const GCodeContext = require('gcode-context');
 
 // for more information on gcode file settings see https://github.com/lavolpecheprogramma/gcode-file
