@@ -3,11 +3,13 @@ const simplify = require('simplify-js')
 const GCodeFile = require('gcode-file')
 
 class GCodeContext {
-  constructor({context, gcodeSettings = {}}) {
+  constructor({context, autoBind = true, gcodeSettings = {}}) {
     this.ctx = context
     this.paths = []
     this.gCode = new GCodeFile(gcodeSettings)
-    this.addListeners()
+    if (autoBind) {
+      this.addListeners()
+    }
   }
 
   get path() { return this.paths[this.paths.length - 1] }
