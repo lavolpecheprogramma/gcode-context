@@ -1,6 +1,6 @@
 {
   "name": "gcode-context",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "Wrap the canvas context to replicate it in a gcode file",
   "main": "index.js",
   "repository": {
