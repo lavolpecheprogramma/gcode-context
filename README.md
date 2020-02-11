@@ -43,6 +43,10 @@ const sketch = ({context}) => {
     ctx.beginPath()
     ctx.rect(0, 0, width, height)
     ctx.stroke()
+
+    // with CMD+S you can download your gcode file 
+    // or
+    ctx.saveFile()
   }
 }
 
