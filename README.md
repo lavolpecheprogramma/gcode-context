@@ -1,6 +1,7 @@
 # gcode-context
 
-Wrap the canvas context to replicate it in a gcode file and easily print your drawings with a penplot.
+A simple wrapper for canvas context to export a g-code file starting from your web sketch!
+Very useful to print your drawings with a penplot.
 
 ### Installation
 
