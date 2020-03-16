@@ -5,14 +5,26 @@ const GCodeFile = require('gcode-file')
 class GCodeContext {
   constructor({context, autoBind = true, gcodeSettings = {}}) {
     this.ctx = context
-    this.paths = []
     this.gCode = new GCodeFile(gcodeSettings)
+
     if (autoBind) {
       this.addListeners()
     }
+
+    this.clear()
   }
 
-  get path() { return this.paths[this.paths.length - 1] }
+  get paths() {
+    return this.layers[this.layers.length - 1].paths
+  }
+
+  set paths(val) {
+    return this.layers[this.layers.length - 1].paths = val
+  }
+
+  get path() {
+    return this.paths[this.paths.length - 1]
+  }
 
   addListeners() {
     window.addEventListener('keydown', event => {
@@ -24,18 +36,32 @@ class GCodeContext {
     })
   }
 
+  addLayer(name = ''){
+    this.layers.push({
+      name,
+      paths: []
+    })
+  }
+
   saveFile() {
-    console.log('Converting path to polylines...')
-    const lines = pathsToPolylines(this.paths)
-    lines.forEach(l => simplify(l, 1, true))
-    console.log('Add data to gcode file...')
-    this.gCode.addPolylines(lines)
-    console.log('Download file...')
+    this.gCode.clear()
+    this.layers.forEach( ({name, paths}, i) => {
+      if(i > 0){
+        this.gCode.addLayer(name)
+      }
+      console.log(`[File ${i}] Converting path to polylines...`)
+      const lines = pathsToPolylines(paths)
+      lines.forEach(l => simplify(l, 1, true))
+      console.log(`[File ${i}] Add data to gcode file...`)
+      this.gCode.addPolylines(lines)
+    })
+    console.log(`Download files...`)
     this.gCode.downloadFile()
   }
 
   clear() {
-    this.paths = []
+    this.layers = []
+    this.addLayer()
     this.ctx.clearRect(0, 0, this.ctx.canvas.width, this.ctx.canvas.height)
   }
 
@@ -101,4 +127,4 @@ class GCodeContext {
   }
 }
 
-module.exports =  GCodeContext
+module.exports = GCodeContext
