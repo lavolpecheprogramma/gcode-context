@@ -116,5 +116,8 @@ Under the hood, it use the original canvas context to render and [createPath](ht
 #### `clear()`
 Clear the canvas and remove all the saved paths
 
+#### `addLayer()`
+Add layer in gcode file instance
+
 #### `saveFile()`
 Download the gcode file
