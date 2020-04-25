@@ -1,6 +1,6 @@
 {
   "name": "gcode-context",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Wrap the canvas context to replicate it in a gcode file",
   "main": "index.js",
   "repository": {
@@ -19,7 +19,7 @@
   "homepage": "https://github.com/lavolpecheprogramma/gcode-context#readme",
   "dependencies": {
     "canvas-sketch-util": "^1.10.0",
-    "gcode-file": "^1.0.4",
+    "gcode-file": "^1.0.6",
     "simplify-js": "^1.2.4"
   }
 }

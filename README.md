@@ -11,7 +11,9 @@ npm i --save @gcode-context
 ```
 
 ### Example
-You can use gcode-context with [canvas-sketch](https://github.com/mattdesl/canvas-sketch) by Matt DesLauriers (@mattdesl)
+You can use gcode-context with [canvas-sketch](https://github.com/mattdesl/canvas-sketch) by Matt DesLauriers (@mattdesl).
+
+Check [https://github.com/lavolpecheprogramma/gcode-file](https://github.com/lavolpecheprogramma/gcode-file) to set correctly your gcode file.
 
 ```javascript
 const canvasSketch = require('canvas-sketch');
